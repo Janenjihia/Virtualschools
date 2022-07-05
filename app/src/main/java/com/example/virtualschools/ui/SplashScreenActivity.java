@@ -48,6 +48,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         welcome.setAnimation(bottomAnim);
         logo.setAnimation(bottomAnim);
 
+        button.setAlpha(0f);
+        button.setTranslationY(50);
+
+        button.animate().alpha(1f).translationYBy(-50).setDuration(4000);
+
         button.setOnClickListener(v -> {
             Intent intent = new Intent(SplashScreenActivity.this, LogInActivity.class);
             startActivity(intent);
