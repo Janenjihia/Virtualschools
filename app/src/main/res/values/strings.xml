@@ -4,4 +4,7 @@
     <string name="welcome_to">WELCOME TO</string>
     <string name="e_learning">E-Learning</string>
     <string name="get_started">Get Started</string>
+    <string-array name="profile_options">
+        <item>Log Out</item>
+    </string-array>
 </resources>
