@@ -11,11 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/e_learning"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="COURSES"
         android:textColor="@color/darkshade"
         android:textSize="30sp"
@@ -24,14 +23,19 @@
     <TextView
         android:id="@+id/e_learning"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:layout_marginTop="0dp"
         android:background="@color/Orange"
-        android:paddingStart="20dp"
-        android:paddingTop="50dp"
-        android:text="E learning"
+        android:drawableStart="@drawable/lightbulb"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:paddingStart="10dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:text="E-learning"
         android:textAlignment="viewStart"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="28sp" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -72,8 +76,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course1"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Course 1"
                     android:textAlignment="center"
+                    android:textColor="@color/darkshade"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -105,8 +111,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="course2"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Course 2"
                     android:textAlignment="center"
+                    android:textColor="@color/darkshade"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -138,8 +146,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Course3"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Course 3"
                     android:textAlignment="center"
+                    android:textColor="@color/darkshade"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -171,8 +181,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
                     android:text="Course 4"
                     android:textAlignment="center"
+                    android:textColor="@color/darkshade"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
