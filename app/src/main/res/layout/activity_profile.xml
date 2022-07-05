@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ProfileActivity"
-    android:background="@color/darkshade">
+    android:background="@color/darkshade"
+    tools:context=".ui.ProfileActivity">
 
     <View
         android:layout_width="412dp"
@@ -23,10 +23,10 @@
         android:layout_marginEnd="212dp"
         android:layout_marginBottom="388dp"
         android:background="@drawable/circle2"
+        android:contentDescription="profile picture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/user"
-        android:contentDescription="profile picture"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -57,7 +57,8 @@
         app:layout_constraintTop_toBottomOf="@id/name"
         tools:ignore="HardcodedText" />
 
-    <ImageView
+    <View
+        android:id="@+id/edit_hold"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="140dp"
@@ -67,5 +68,98 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/name"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="2dp"
+        android:contentDescription="edit"
+        app:layout_constraintBottom_toBottomOf="@id/edit_hold"
+        app:layout_constraintEnd_toEndOf="@id/edit_hold"
+        app:layout_constraintStart_toStartOf="@id/edit_hold"
+        app:layout_constraintTop_toTopOf="@id/edit_hold"
+        app:srcCompat="@drawable/edit"
+        tools:ignore="HardcodedText,ImageContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/chat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:drawableEnd="@drawable/chat"
+        android:drawablePadding="30dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:paddingStart="20dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="5dp"
+        android:text="Chat"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/role"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/all_courses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="All Courses"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/all_bookmarks"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chat_button"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/all_bookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Bookmarks"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/all_courses"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/grades"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Grades"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/all_bookmarks"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/attendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Attendance"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grades"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
