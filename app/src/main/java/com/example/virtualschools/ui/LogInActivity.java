@@ -31,15 +31,15 @@ public class LogInActivity extends AppCompatActivity {
 
         username.setAlpha(0f);
         username.setTranslationY(50);
-        username.animate().alpha(1f).translationYBy(-50).setDuration(2000);
+        username.animate().alpha(1f).translationYBy(-50).setDuration(1500);
 
         password.setAlpha(0f);
         password.setTranslationY(50);
-        password.animate().alpha(1f).translationYBy(-50).setDuration(2000);
+        password.animate().alpha(1f).translationYBy(-50).setDuration(1500);
 
         button.setAlpha(0f);
         button.setTranslationY(50);
-        button.animate().alpha(1f).translationYBy(-50).setDuration(2000);
+        button.animate().alpha(1f).translationYBy(-50).setDuration(1500);
 
         button.setOnClickListener(v -> {
             Intent intent = new Intent(LogInActivity.this,MainActivity.class);
