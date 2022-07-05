@@ -80,9 +80,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_library_books_24"
                     android:contentDescription="course image"
-                    tools:ignore="HardcodedText" />
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -119,9 +119,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_library_books_24"
                     android:contentDescription="course image"
-                    tools:ignore="HardcodedText" />
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -166,8 +166,8 @@
                 android:paddingEnd="10dp"
                 android:paddingBottom="5dp"
                 android:text="Home"
-                android:textColor="@color/Orange"
-                app:drawableTopCompat="@drawable/home_"
+                android:textColor="#555555"
+                app:drawableTopCompat="@drawable/home_grey"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -181,9 +181,9 @@
                 android:paddingEnd="10dp"
                 android:paddingBottom="5dp"
                 android:text="Bookmarks"
-                android:textColor="#555555"
-                app:drawableTopCompat="@drawable/bookmark"
-                tools:ignore="HardcodedText" />
+                android:textColor="@color/Orange"
+                app:drawableTopCompat="@drawable/bookmark_orange"
+                tools:ignore="HardcodedText,TextContrastCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
