@@ -5,6 +5,7 @@
     <string name="e_learning">E-Learning</string>
     <string name="get_started">Get Started</string>
     <string-array name="profile_options">
+        <item>Help</item>
         <item>Log Out</item>
     </string-array>
 </resources>

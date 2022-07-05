@@ -55,20 +55,5 @@ public class ProfileActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         menu.setAdapter(adapter);
 
-        menu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                String selectedItem = parent.getItemAtPosition(position).toString();
-                if(selectedItem.equals("Log Out"))
-                {
-                    startActivity(new Intent(ProfileActivity.this,LogInActivity.class));
-                }
-            }
-
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-
-            }
-        });
     }
 }
