@@ -156,6 +156,7 @@
             android:layout_marginBottom="2dp">
 
             <TextView
+                android:id="@+id/home_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -171,6 +172,7 @@
                 tools:ignore="HardcodedText" />
 
             <TextView
+                android:id="@+id/bookmark_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -186,6 +188,7 @@
                 tools:ignore="HardcodedText,TextContrastCheck" />
 
             <TextView
+                android:id="@+id/profile_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
