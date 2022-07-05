@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.virtualschools.R;
 
-public class LogIn extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
