@@ -59,7 +59,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -98,7 +98,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="180dp"
+            android:layout_height="150dp"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="1"
@@ -137,6 +137,7 @@
     </GridLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -203,9 +204,25 @@
                 app:drawableTopCompat="@drawable/profile"
                 tools:ignore="HardcodedText" />
         </com.google.android.material.bottomappbar.BottomAppBar>
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="chat"
+        android:focusable="true"
+        app:backgroundTint="@color/darkshade"
+        app:layout_constraintBottom_toTopOf="@id/coordinator_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/chat"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
