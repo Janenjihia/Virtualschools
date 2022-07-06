@@ -286,8 +286,8 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/chatActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -298,10 +298,20 @@
         android:clickable="true"
         android:contentDescription="chat"
         android:focusable="true"
+        android:fontFamily="@font/poppins_extrabold"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:text="Chat"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:backgroundTint="@color/darkshade"
+        app:icon="@drawable/bi_chat_2"
+        app:iconPadding="10dp"
         app:layout_constraintBottom_toTopOf="@id/coordinator_bar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/chat"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
