@@ -8,11 +8,24 @@
     tools:context=".ui.ChatActivity">
 
     <EditText
+        android:id="@+id/search_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/search_back"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:hint="Search"
-        android:layout_margin="5dp"
-        android:id="@+id/search_user"
         android:padding="10dp"
+        android:paddingStart="20dp"
+        android:textColor="@color/darkshade"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:id="@+id/rv_chat" />
 
 </LinearLayout>
