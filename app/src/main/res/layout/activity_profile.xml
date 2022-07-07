@@ -57,62 +57,29 @@
         app:layout_constraintTop_toBottomOf="@id/name"
         tools:ignore="HardcodedText" />
 
-    <View
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/edit_hold"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="180dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/circle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/name"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="2dp"
-        android:contentDescription="edit"
-        app:layout_constraintBottom_toBottomOf="@id/edit_hold"
-        app:layout_constraintEnd_toEndOf="@id/edit_hold"
-        app:layout_constraintStart_toStartOf="@id/edit_hold"
-        app:layout_constraintTop_toTopOf="@id/edit_hold"
-        app:srcCompat="@drawable/edit"
-        tools:ignore="HardcodedText,ImageContrastCheck" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/chat_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button"
-        android:drawableEnd="@drawable/chat"
-        android:drawablePadding="30dp"
-        android:fontFamily="@font/poppins_extrabold"
-        android:paddingStart="20dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="5dp"
-        android:text="Chat"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/all_courses"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="edit"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/ic_baseline_edit"
+        app:backgroundTint="@color/Orange"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/role"
-        tools:ignore="HardcodedText,TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/all_courses"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
         android:drawablePadding="20dp"
         android:fontFamily="@font/poppins_bold"
@@ -123,7 +90,7 @@
         app:layout_constraintBottom_toTopOf="@id/all_bookmarks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chat_button"
+        app:layout_constraintTop_toBottomOf="@id/role"
         tools:ignore="HardcodedText" />
 
     <TextView
@@ -169,14 +136,12 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
         android:drawablePadding="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Attendance"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:drawableEndCompat="@drawable/arrow_right"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/grades"
@@ -196,13 +161,44 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="30dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/profile_menu"
+        android:minHeight="48dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/chatActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="chat"
+        android:focusable="true"
+        android:fontFamily="@font/poppins_extrabold"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp"
+        android:text="Chat"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:backgroundTint="@color/Orange"
+        app:icon="@drawable/bi_chat_2"
+        app:iconPadding="20dp"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
