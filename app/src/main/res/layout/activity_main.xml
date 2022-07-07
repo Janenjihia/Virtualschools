@@ -39,16 +39,17 @@
         android:textSize="28sp"
         app:drawableEndCompat="@drawable/menu"
         app:drawableStartCompat="@drawable/sidebulb"
-        tools:ignore="HardcodedText,RtlSymmetry" />
+        tools:ignore="HardcodedText,RtlSymmetry,TextContrastCheck" />
 
     <GridLayout
+        android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title_view"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         android:columnCount="2"
         android:rowCount="2">
 
@@ -76,9 +77,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_library_books_24"
                     android:contentDescription="course image"
-                    tools:ignore="HardcodedText" />
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -115,9 +116,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_library_books_24"
                     android:contentDescription="course image"
-                    tools:ignore="HardcodedText" />
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -154,9 +155,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_library_books_24"
                     android:contentDescription="course image"
-                    tools:ignore="HardcodedText" />
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -193,9 +194,9 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_library_books_24"
                     android:contentDescription="course image"
-                    tools:ignore="HardcodedText" />
+                    android:src="@drawable/ic_baseline_library_books_24"
+                    tools:ignore="HardcodedText,ImageContrastCheck" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -210,5 +211,77 @@
         </androidx.cardview.widget.CardView>
     </GridLayout>
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/grid"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/grid"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Home"
+                android:textColor="@color/Orange"
+                app:drawableTopCompat="@drawable/home_"
+                tools:ignore="HardcodedText,TextContrastCheck" />
+
+            <TextView
+                android:id="@+id/bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Bookmarks"
+                android:textColor="#555555"
+                app:drawableTopCompat="@drawable/bookmark"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:paddingStart="10dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="5dp"
+                android:text="Profile"
+                android:textColor="#555555"
+                app:drawableTopCompat="@drawable/profile"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>
