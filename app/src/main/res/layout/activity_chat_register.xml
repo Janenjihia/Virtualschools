@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ChatRegisterActivity">
+
+
+
+    <TextView
+        android:id="@+id/back_to_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text=" Back"
+        android:textAlignment="inherit"
+        android:textColor="@color/darkshade"
+        android:textSize="20sp"
+        app:drawableStartCompat="@drawable/ic_arrow_back"
+        android:drawableTint="@color/darkshade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_to_start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="Set Up New Chat Account"
+            android:textColor="@color/darkshade"
+            android:textSize="25sp"
+            tools:ignore="HardcodedText" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/chat_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:textColor="@color/darkshade"
+            android:textColorHint="#555555"
+            app:met_floatingLabel="normal"
+            app:met_floatingLabelPadding="10dp"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/chat_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="10dp"
+            android:textColor="@color/darkshade"
+            android:textColorHint="#555555"
+            app:met_floatingLabel="normal"
+            app:met_floatingLabelPadding="10dp"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/chat_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:textColor="@color/darkshade"
+            android:textColorHint="#555555"
+            app:met_floatingLabel="normal"
+            app:met_floatingLabelPadding="10dp"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_blue"
+            android:fontFamily="@font/poppins_bold"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:textAlignment="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Have An Account?"
+                android:textColor="@color/darkshade"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/go_log_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="Log In"
+                android:textColor="@color/darkshade"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
