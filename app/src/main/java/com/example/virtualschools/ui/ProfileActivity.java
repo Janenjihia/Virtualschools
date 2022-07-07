@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.virtualschools.R;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import butterknife.BindView;
@@ -38,6 +39,11 @@ public class ProfileActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.spinner) Spinner menu;
 
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.chatActionButton) ExtendedFloatingActionButton chat;
+
+    Boolean isChatVisible;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +60,25 @@ public class ProfileActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.profile_options, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         menu.setAdapter(adapter);
+
+        //shrink action button
+
+        isChatVisible=false;
+        chat.shrink();
+
+        chat.setOnClickListener(
+                view -> {
+                    if (!isChatVisible) {
+                        chat.extend();
+                        // make the boolean variable true
+                        isChatVisible = true;
+                    } else {
+                        chat.shrink();
+                        // make the boolean variable false
+                        isChatVisible = false;
+                    }
+                }
+        );
 
     }
 }

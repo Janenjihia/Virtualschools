@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
 import com.example.virtualschools.R;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.grid) GridLayout grid;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.chatActionButton) ExtendedFloatingActionButton chat;
+
+    Boolean isChatVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +60,24 @@ public class MainActivity extends AppCompatActivity {
 //            transaction.addToBackStack(null);
 //            transaction.commit();
 //        });
+
+        //shrink action button
+
+        isChatVisible=false;
+        chat.shrink();
+
+        chat.setOnClickListener(
+                view -> {
+                    if (!isChatVisible) {
+                        chat.extend();
+                        // make the boolean variable true
+                        isChatVisible = true;
+                    } else {
+                        chat.shrink();
+                        // make the boolean variable false
+                        isChatVisible = false;
+                    }
+                }
+        );
     }
 }

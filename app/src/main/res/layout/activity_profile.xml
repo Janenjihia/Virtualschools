@@ -195,7 +195,8 @@
         android:textSize="20sp"
         app:backgroundTint="@color/Orange"
         app:icon="@drawable/bi_chat_2"
-        app:iconPadding="10dp"
+        app:iconPadding="20dp"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="HardcodedText,TextContrastCheck" />

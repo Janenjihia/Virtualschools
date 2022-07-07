@@ -9,7 +9,6 @@
         android:id="@+id/title_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
@@ -309,7 +308,8 @@
         android:textSize="20sp"
         app:backgroundTint="@color/darkshade"
         app:icon="@drawable/bi_chat_2"
-        app:iconPadding="10dp"
+        app:iconPadding="20dp"
+        app:iconTint="@color/white"
         app:layout_constraintBottom_toTopOf="@id/coordinator_bar"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="HardcodedText" />
