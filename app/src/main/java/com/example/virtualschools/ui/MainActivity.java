@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                         chat.shrink();
                         // make the boolean variable false
                         isChatVisible = false;
+                        startActivity(new Intent(MainActivity.this,ChatActivity.class));
                     }
                 }
         );

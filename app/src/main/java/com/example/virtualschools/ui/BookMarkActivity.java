@@ -79,6 +79,7 @@ public class BookMarkActivity extends AppCompatActivity {
                         chat.shrink();
                         // make the boolean variable false
                         isChatVisible = false;
+                        startActivity(new Intent(BookMarkActivity.this,ChatActivity.class));
                     }
                 }
         );

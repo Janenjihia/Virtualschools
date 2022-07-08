@@ -76,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
                         chat.shrink();
                         // make the boolean variable false
                         isChatVisible = false;
+                        startActivity(new Intent(ProfileActivity.this,ChatActivity.class));
                     }
                 }
         );
