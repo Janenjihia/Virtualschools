@@ -3,7 +3,6 @@ package com.example.virtualschools.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridLayout;
@@ -57,12 +56,6 @@ public class BookMarkActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-//        grid.setOnClickListener(v -> {
-//            FragmentTransaction transaction=getFragmentManager().beginTransaction();
-//            transaction.replace(R.layout.bookmark_layout, CoursesFragment.class);
-//            transaction.addToBackStack(null);
-//            transaction.commit();
-//        });
 
         //shrink action button
 
