@@ -13,6 +13,8 @@ import android.widget.ImageView;
 
 import com.example.virtualschools.R;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,12 +39,29 @@ public class ChatActivity extends AppCompatActivity {
 
     Boolean isHomeVisible;
 
+    FirebaseUser firebaseUser;
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+
+        //firebase autologin
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUser!=null){
+            Intent intent = new Intent(ChatActivity.this, MainChatActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_chat);
         ButterKnife.bind(this);
+
 
         //animation
         Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.clockwise);
@@ -52,8 +71,7 @@ public class ChatActivity extends AppCompatActivity {
         right.startAnimation(antiRotate);
 
 
-
-
+        //log-in & register pages
         log_page.setOnClickListener(v -> startActivity(new Intent(ChatActivity.this,ChatLoginActivity.class)));
         register_page.setOnClickListener(v -> startActivity(new Intent(ChatActivity.this,ChatRegisterActivity.class)));
 
