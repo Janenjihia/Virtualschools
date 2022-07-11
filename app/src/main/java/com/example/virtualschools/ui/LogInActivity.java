@@ -88,7 +88,7 @@ public class LogInActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NonNull Call<Student> call, @NonNull Throwable t) {
-                Toast.makeText(LogInActivity.this, "Network Error, Please try again", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LogInActivity.this, "Network Failure, Please try again", Toast.LENGTH_SHORT).show();
             }
         });
     }

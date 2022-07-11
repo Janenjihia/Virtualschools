@@ -11,7 +11,12 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface Api {
+    //login
     @POST("users/login") Call<Student> login (@Body Login login);
 
+    //get student details
     @GET("users") Call<StudentDetails> getStudentDetails(@Header("Authorization") String token);
+
+    //get courses
+
 }
