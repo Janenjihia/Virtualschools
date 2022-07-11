@@ -52,10 +52,10 @@ public class MainChatActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ChatUser chatUser = snapshot.getValue(ChatUser.class);
                 name.setText(Objects.requireNonNull(chatUser).getUsername());
-                if(chatUser.getImageURL().equals("default")){
+                if(chatUser.getImageUrl().equals("default")){
                     profile_image.setImageResource(R.drawable.user);
                 } else {
-                    Glide.with(MainChatActivity.this).load(chatUser.getImageURL()).into(profile_image);
+                    Glide.with(MainChatActivity.this).load(chatUser.getImageUrl()).into(profile_image);
                 }
             }
 
