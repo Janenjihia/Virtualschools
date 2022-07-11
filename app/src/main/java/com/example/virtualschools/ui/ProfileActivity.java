@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -20,6 +23,7 @@ import com.example.virtualschools.models.StudentDetails;
 import com.example.virtualschools.network.Api;
 import com.example.virtualschools.network.Client;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,6 +59,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     @SuppressLint("NonConstantResourceId")
     @BindView(R.id.chatActionButton) ExtendedFloatingActionButton chat;
+
+    @SuppressLint("NonConstantResourceId")
+    @BindView(R.id.edit_hold) FloatingActionButton edit;
 
     Boolean isChatVisible;
 
@@ -118,6 +125,15 @@ public class ProfileActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<StudentDetails> call, @NonNull Throwable t) {
                 Toast.makeText(ProfileActivity.this, "Network Failure", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        //update profile details
+        edit.setOnClickListener(v -> {
+            Animation rotate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.clockwise);
+            edit.startAnimation(rotate);
+            //Stop animation after 1 second
+            new Handler().postDelayed(() -> edit.clearAnimation(), 1000);
+
         });
 
     }
