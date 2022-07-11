@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416522210565",
+    "project_id": "e-learning-801ac",
+    "storage_bucket": "e-learning-801ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416522210565:android:766d223aa73ffad0b47b6c",
+        "android_client_info": {
+          "package_name": "com.example.virtualschools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416522210565-4s77ng3jiaelle46n2qq7v1plfpp35v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzlE47HHUI6WJpvzHjTB1WoZfj8YXLu9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416522210565-4s77ng3jiaelle46n2qq7v1plfpp35v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
