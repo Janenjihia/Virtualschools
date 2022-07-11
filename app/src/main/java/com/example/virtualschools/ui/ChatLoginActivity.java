@@ -1,7 +1,6 @@
 package com.example.virtualschools.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,8 +12,9 @@ import android.widget.Toast;
 
 import com.example.virtualschools.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +37,6 @@ public class ChatLoginActivity extends AppCompatActivity {
     @BindView(R.id.go_register) TextView to_register;
 
     FirebaseAuth auth;
-    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +53,8 @@ public class ChatLoginActivity extends AppCompatActivity {
 
 
         log_btn.setOnClickListener(v -> {
-            String txt_email=email.getText().toString();
-            String txt_password=password.getText().toString();
+            String txt_email= Objects.requireNonNull(email.getText()).toString();
+            String txt_password= Objects.requireNonNull(password.getText()).toString();
 
             if(TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
                 Toast.makeText(this, "All Fields Are Required!", Toast.LENGTH_SHORT).show();
@@ -63,7 +62,7 @@ public class ChatLoginActivity extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(txt_email,txt_password)
                         .addOnCompleteListener(task -> {
                             if(task.isSuccessful()){
-                                Intent intent = new Intent(ChatLoginActivity.this, ChatActivity.class);
+                                Intent intent = new Intent(ChatLoginActivity.this, MainChatActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();

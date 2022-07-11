@@ -47,10 +47,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.6'
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'com.google.firebase:firebase-core:21.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation platform('com.google.firebase:firebase-bom:30.2.0')
     implementation 'com.google.firebase:firebase-analytics'
+
+    //cardView //materialEditText //circleImageview //image load
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
 
     //gson-converter & retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'

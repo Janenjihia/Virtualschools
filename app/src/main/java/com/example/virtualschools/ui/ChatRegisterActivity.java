@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -61,9 +62,9 @@ public class ChatRegisterActivity extends AppCompatActivity {
 
 
         register_btn.setOnClickListener(v -> {
-            String txt_username=username.getText().toString();
-            String txt_email=email.getText().toString();
-            String txt_password=password.getText().toString();
+            String txt_username= Objects.requireNonNull(username.getText()).toString();
+            String txt_email= Objects.requireNonNull(email.getText()).toString();
+            String txt_password= Objects.requireNonNull(password.getText()).toString();
 
             if(TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
                 Toast.makeText(this, "All Fields Are Required!", Toast.LENGTH_SHORT).show();
@@ -87,7 +88,7 @@ public class ChatRegisterActivity extends AppCompatActivity {
                         map.put("imageUrl", "default");
                         reference.setValue(map).addOnCompleteListener(task1 -> {
                             if (task1.isSuccessful()) {
-                                Intent intent = new Intent(ChatRegisterActivity.this, ChatActivity.class);
+                                Intent intent = new Intent(ChatRegisterActivity.this, MainChatActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();
