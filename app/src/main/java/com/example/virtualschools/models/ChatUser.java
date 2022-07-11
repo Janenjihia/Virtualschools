@@ -3,12 +3,12 @@ package com.example.virtualschools.models;
 public class ChatUser {
     private String id;
     private String username;
-    private String imageURL;
+    private String imageUrl;
 
-    public ChatUser(String id, String username, String imageURL) {
+    public ChatUser(String id, String username, String imageUrl) {
         this.id = id;
         this.username = username;
-        this.imageURL = imageURL;
+        this.imageUrl = imageUrl;
     }
 
     public ChatUser() {
@@ -30,11 +30,11 @@ public class ChatUser {
         this.username = username;
     }
 
-    public String getImageURL() {
-        return imageURL;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
