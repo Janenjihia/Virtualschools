@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&family=Poppins:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+h2 {
+  color: #161c5a;
+}
+h3 {
+  color: #ffcdb5;
+  border-right: 2px solid rgba(5, 68, 104);
+}
+h6 {
+  font-size: 1px;
+  color: #161c5a;
+}
+h5 {
+  color: #161c5a;
+  font-family: "Poppins", sans-serif;
+}
+.side-menu {
+  position: fixed;
+  background: #161c5a;
+  width: 35vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.side-menu .brand-name {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.side-menu li a {
+  font-size: 13px;
+  padding: 10px 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.side-menu li a:hover {
+  color: #ff894f;
+  border-right: 2px solid rgb(5, 68, 104);
+}
+.side-menu li img {
+  padding-right: 10%;
+}
+.side-menu li img:hover {
+  color: #0c7db1;
+}
+.container {
+  position: absolute;
+  right: 0;
+}
+.container .header {
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+}
+.container .header .nav {
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+.container .header .nav .search {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+
+}
+#search {
+  border: none;
+  outline: none;
+  background: #f1f1f1;
+  padding: 10px;
+  color: #ff894f;
+  width: 70%;
+  border-radius: 30px;
+
+
+}
+.container .header .nav .search button {
+  border: none;
+  border-radius: 1px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .header .nav .search img {
+  width: 20px;
+  height: 20px;
+  margin-top: 2%;
+  display: inline block;
+  left: 100px;
+}
+.container .header .nav .user {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+}
+.container .header .nav .user .image-case {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+.container .header .nav .user img {
+  width: 30px;
+  height: 30px;
+}
+.res h2{
+  color: #161c5a;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 10px;
+  margin-left: 150%;
+}
+.container .content {
+  position: relative;
+  margin-top: 10vh;
+  min-height: 90vh;
+}
+.container .content .cards {
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: all 1.5s ease;
+}
+.container .content .cards:hover {
+  transition: scale(1.5s);
+}
+.container .content .cards .card {
+  width: 250px;
+  height: 150px;
+  margin: 20px 10px;
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #f1f1f1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .content .content-2 {
+  min-height: 60vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container .content .content-2 .schools {
+  min-height: 80vh;
+  flex: 5;
+  background: #f1f1f1;
+  margin: 0 25px 25px 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 120px;
+  display: flex;
+  flex-direction: column;
+}
+th {
+  justify-content: space-around;
+  padding-left: 30px;
+  color: black;
+}
+
+td {
+  justify-content: space-around;
+  padding-left: 30px;
+  font-size: 13px;
+}
+table {
+  margin-top: 2%;
+}
+.container .content .content-2 .schools .btn {
+  background: #161c5a;
+  color: #ff894f;
+  font-size: 13px;
+  border-radius: 20px;
+  margin-top: 2%;
+  height: 50%;
+}
+.container .content .content-2 .schools .btn:hover {
+  background: #ff894f;
+  color: #161c5a;
+}
+.school-form {
+  color: #161c5a;
+  margin-left: 30%;
+}
+input[type="text"] {
+  width: 80%;
+  padding: 9px 9px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #161c5a;
+  background: #e5e5e5;
+}
+input[type="number"] {
+  width: 50%;
+  padding: 9px 9px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #161c5a;
+  background: #e5e5e5;
+}
+.btn[type="submit"] {
+  width: 200px;
+  background-color: #ff894f;
+  color: white;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 10%;
+}
+.btn[type="submit"]:hover {
+  background-color: #161c5a;
+  color: white;
+}
+#createSchool {
+  margin-left: 25%;
+}
+#createUser{
+  margin-left: 25%;
+}
+@media screen and (max-width: 1050px) {
+  .side-menu li {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .side-menu li span {
+    display: none;
+  }
+  .side-menu {
+    align-items: center;
+  }
+  .side-menu li img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 536px) {
+  .brand-name h3 {
+    font-size: 10px;
+  }
+  .container .content .cards {
+    justify-content: center;
+  }
+  .side-menu li img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.container1 {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container1 input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container1:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container1 input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container1 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container1 .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

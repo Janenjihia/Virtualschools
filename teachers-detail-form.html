@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb7cf38d2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 style="text-align: center; color:#ffcdb5; margin-top:10px;">E learning</h2>
+        <a href="dashboard.html">
+            <span class="icon"><i class="fa-solid fa-home"></i></span>
+            <span class="item">Dashboard</span>
+        </a>
+        <a href="school-detail-form.html">
+            <span class="icon"><i class="fas fa-school"></i></i></span>
+            <span class="item">Schools</span>
+            <!-- Create an accordion -->
+
+        </a>
+        <a href="teachers-detail-form.html">
+            <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+            <span class="item">Teachers</span>
+        </a>
+        <a href="students-detail-form.html">
+            <span class="icon"><i class="fas fa-user-graduate"></i></span>
+            <span class="item">Students</span>
+        </a>
+        <a href="resources.html">
+            <span class="icon"><i class="fa-solid fa-file"></i></span>
+            <span class="item">Resources</span>
+        </a>
+        <a href="attendance.html">
+            <span class="icon"><i class="fa-solid fa-clipboard-user"></i></span>
+            <span class="item">Attendance</span>
+        </a>
+        
+        <a href="login.html">
+            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+            <span class="item">Logout</span>
+        </a>
+    </div>
+    <div class="container">
+        <div class="school-form">
+            <h2 class="mb-4 pt-4">TEACHER'S DETAILS</h2>
+            <form class="form" action="/teachers-detail-form/new" method="post">
+                <div class="mb-3 ">
+                    <h6>Full Name:</h6>
+                    <input type="text" id="username" placeholder="Full Name" name="fname" required>
+                </div>
+
+                <div class="mb-3 ">
+                    <h6>Email:</h6>
+                    <input type="text" id="email" placeholder="Email" name="fname" required>
+                </div>
+                <div id="Instructor">
+                <button class="btn btn-primary" type="submit" id="createUser" onclick="addByOne()">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script type="module" defer>
+        import { createUser } from './assets/js/App.js';
+
+        document.getElementById('createUser').addEventListener('click', (event) => {
+            event.preventDefault();
+            const user = {
+                name: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                role: "TEACHER"
+            }
+            createUser(user);
+            document.getElementById('username').value = "";
+            document.getElementById('email').value = "";
+        });
+        
+        function addByOne(e) {
+    increment.innerHTML = ++i;
+}
+
+var i = 0;
+var increment = document.getElementById('teach');
+var increase = document.getElementById('createUser');
+increase.addEventListener('click', function (e) {
+    addByOne(e);
+}, false);
+
+        
+    </script>
+</body>
+
+</html>

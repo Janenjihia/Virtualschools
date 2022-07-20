@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/assets/css/styles.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <script src="https://kit.fontawesome.com/cb7cf38d2f.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <title>Document</title>
+    </head>
+    <body>
+      
+        <div class="sidebar">
+            <h2 style="text-align: center; color:#ffcdb5; margin-top:10px;">E learning</h2>
+            <a href="dashboard.html">
+                <span class="icon"><i class="fa-solid fa-home"></i></span>
+                <span class="item">Dashboard</span>
+            </a>
+            <a href="school-detail-form.html">
+                <span class="icon"><i class="fas fa-school"></i></i></span>
+                <span class="item">Schools</span>
+                <!-- Create an accordion -->
+    
+            </a>
+            <a href="teachers-detail-form.html">
+                <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                <span class="item">Teachers</span>
+            </a>
+            <a href="students-detail-form.html">
+                <span class="icon"><i class="fas fa-user-graduate"></i></span>
+                <span class="item">Teachers</span>
+            </a>
+            <a href="students-detail-form.html">
+                <span class="icon"><i class="fa-solid fa-book"></i></span>
+                <span class="item">Students</span>
+            </a>
+            <a href="resources.html">
+                <span class="icon"><i class="fa-solid fa-file"></i></span>
+                <span class="item">Resources</span>
+            </a>
+            <a href="attendance.html">
+                <span class="icon"><i class="fa-solid fa-clipboard-user"></i></span>
+                <span class="item">Attendance</span>
+            </a>
+            
+            <a href="login.html">
+                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                <span class="item">Logout</span>
+            </a>
+        </div>
+        
+
+        <div class="section">
+
+            <div class="content-2">
+                <div class="attendances" >
+                    <div class="card" id="cards">
+                        <table class="table" id="attendance-table">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Date</th>
+                                    <th>Activity</th>
+        
+                                </tr>
+                            </thead>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<script type="module">
+    import * as App from './assets/js/App.js';
+
+    const y = new Date().getFullYear();
+    const m = 1 + (new Date().getMonth());
+    const d = new Date().getDate();
+    const date = y + "-" + ("0" + m).slice(-2) + "-" + d;
+
+    console.log(date);
+    
+    App.getAttendances(date).then((data) => {
+
+    console.table(data);
+        // Map data to table attendance-table'
+
+    const table = document.getElementById('attendance-table');
+
+    data.forEach((attendance) => {
+        const row = table.insertRow();
+        const name = row.insertCell();
+        const dateCheckedIn = row.insertCell();
+        const activity = row.insertCell();
+        name.innerHTML = attendance.userid;
+        dateCheckedIn.innerHTML = attendance.date;
+        activity.innerHTML = attendance.activity;
+    });
+
+    });
+
+</script>
+    </body>
+    </html>

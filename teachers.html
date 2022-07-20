@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cb7cf38d2f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h2 style="text-align: center; color:#ffcdb5; margin-top:10px;">E learning</h2>
+        <a href="dashboard.html">
+            <span class="icon"><i class="fa-solid fa-home"></i></span>
+            <span class="item">Dashboard</span>
+        </a>
+            <!-- Create an accordion -->
+
+        </a>
+        <a href="teachers.html">
+            <span class="icon"><i class="fa-solid fa-book"></i></span>
+            <span class="item">Teachers</span>
+        </a>
+        <a href="students.html">
+            <span class="icon"><i class="fa-solid fa-book"></i></span>
+            <span class="item">Students</span>
+        </a>
+        <a href="login.html">
+            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+            <span class="item">Logout</span>
+        </a>
+    </div>
+    <div class="section">
+
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="search" class="fas" id="search" placeholder="&#xF002;" >
+                </div>
+                <div class="user">
+                    <img src="./assets/images/notification.png" height="20" width="20" alt="">
+                    <div class="img-case">
+                        <span class="text-mute" id="username"></span>
+                        <img src="./assets/images/user.png" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="icon-case">
+                        <img src="./assets/images/teachBlue.png" alt="">
+                    </div>
+                    <div class="box">
+                        <h5 id="teachers">0</h5>
+                        <h6>Teachers</h6>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="icon-case">
+                        <img src="./assets/images/reading-bookBlue.png" alt="">
+                    </div>
+                    <div class="box">
+                        <h5 id="students">0</h5>
+                        <h6>Students</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="schools" >
+                    <table id="school-table">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            
+                            <th>Action</th>
+
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script type="module">
+        import * as App from './assets/js/App.js';
+
+
+        App.getSchools().then((data) => {
+
+        console.table(data);
+            document.getElementById('schools').innerHTML = data.length
+            // Map data to table schools-table'
+
+            const table =document.getElementById('school-table');
+
+           data.forEach((school) => {
+                const row = table.insertRow();
+                const name = row.insertCell();
+                const description = row.insertCell();
+                const action = row.insertCell();
+                name.innerHTML = school.name;
+                description.innerHTML = school.description;
+                action.innerHTML = `<a href="/school.html" class="btn">View</a>`;
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://kit.fontawesome.com/cb7cf38d2f.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1173.0/aws-sdk.min.js"
+        integrity="sha512-RB+ypRV5Soc7dFLZdS939La+MyY5wqj8SCpmKoqCc5T/WDMMtm7lMU2G23xyZ9S90lMa1EnjlKgHxXgKqJ4REQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2 style="text-align: center; color:#ffcdb5; margin-top:10px;">E learning</h2>
+        <a href="dashboard.html">
+            <span class="icon"><i class="fa-solid fa-home"></i></span>
+            <span class="item">Dashboard</span>
+        </a>
+        <a href="school-detail-form.html">
+            <span class="icon"><i class="fas fa-school"></i></i></span>
+            <span class="item">Schools</span>
+            <!-- Create an accordion -->
+
+        </a>
+        <a href="teachers-detail-form.html">
+            <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+            <span class="item">Teachers</span>
+        </a>
+        <a href="students-detail-form.html">
+            <span class="icon"><i class="fas fa-user-graduate"></i></span>
+            <span class="item">Students</span>
+        </a>
+        <a href="resources.html">
+            <span class="icon"><i class="fa-solid fa-file"></i></span>
+            <span class="item">Resources</span>
+        </a>
+        <a href="attendance.html">
+            <span class="icon"><i class="fa-solid fa-clipboard-user"></i></span>
+            <span class="item">Attendance</span>
+        </a>
+    
+        <a href="login.html">
+            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+            <span class="item">Logout</span>
+        </a>
+    </div>
+    <div class="section">
+        <!-- Create navbar -->
+        <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="res">
+                    <h2>RESOURCES</h2>
+                </div>
+                <div class="user" style="justify-content: end;">
+                    <div class="img-case">
+                        <span class="text-mute" id="username"></span>
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="resource-form" id="resource">
+
+            <form class="form">
+                <div class="mb-3 pt-5">
+                    <h6>Resource Name:</h6>
+                    <input type="text" id="resourceName" placeholder="Resource name" name="resourceName" required>
+                </div>
+                <div class="mb-3">
+                    <h6>Resource Description:</h6>
+                    <textarea input type="text" class="form-control" id="description" rows="3" placeholder="Description" ></textarea>
+                </div>
+                <!-- TODO: ADD STYLE TO THIS ELEMENT -->
+                <div class="mb-3 select">
+                    <select class="form-control" id="subjectId" required>
+                        <option selected>Select Subject</option>
+
+                    </select>
+                </div>
+                <div class="mb-3 select">
+                    <select class="form-control" id="access" required>
+                        <option selected>Accessed By</option>
+                        <option value="STUDENT">Students</option>
+                        <option value="TEACHER">Teachers</option>
+
+                    </select>
+                </div>
+                <div class="mb-3 ">
+                    <h6>Upload file:</h6>
+                    <label for="fileField" class="form-label"></label>
+                    <input class="form-control " type="file" id="fileField">
+                </div>
+
+                <button class="btn book" type="submit" id="uploadFile">Create</button>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <script type="module">
+        import { createResource, getSubjects } from "./assets/js/App.js";
+
+        // Upload the file to S3
+        const s3 = new AWS.S3({
+            accessKeyId: "ba28abf7c18444d380fba73dd753c7e5",
+            secretAccessKey: "7746c06876afe3f3f641301306561fd4",
+            endpoint: "https://eu2.contabostorage.com/mern",
+            s3BucketEndpoint: true
+        });
+
+        getSubjects().then((data) => {
+            // Map the array of subjects to select options
+            const select = document.getElementById("subjectId");
+            data.forEach((subject) => {
+                const option = document.createElement("option");
+                option.value = subject.id;
+                option.innerText = subject.name;
+                select.appendChild(option);
+            });
+        })
+
+
+
+        document.getElementById("uploadFile").addEventListener("click", function (e) {
+
+            e.preventDefault();
+            // Get the file from fileField
+            const fileField = document.getElementById('fileField');
+            const resourceName = document.getElementById('resourceName').value;
+            const description = document.getElementById('description').value;
+            const subjectId = document.getElementById('subjectId').value;
+            const access = document.getElementById('access').value;
+
+            const file = fileField.files[0];
+            const fileName = file.name;
+            const fileType = file.type;
+            const fileSize = file.size;
+            const fileData = new FormData();
+            fileData.append('file', file);
+            fileData.append('fileName', fileName);
+            fileData.append('fileType', fileType);
+            fileData.append('fileSize', fileSize);
+            console.log(fileData);
+         
+            // Upload the file to S3
+            s3.upload({
+                Bucket: 'mern',
+                Key: fileName,
+                Body: file,
+                ACL: 'public-read',
+                ContentType: fileType,
+                ContentLength: fileSize
+            }, function (err, data) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    let resource = {
+                        name: resourceName,
+                        description: description,
+                        url: "https://eu2.contabostorage.com/421c79201d584e1fadb39f8afb586827:mern/" + data.Key,
+                        type: fileType,
+                        subjectId: subjectId,
+                        access: access,
+                    }
+                    console.log(resource);
+                    createResource(resource);
+                    // Clear the form
+                    document.getElementById("resourceName").value = "";
+                    document.getElementById("description").value = "";
+                    document.getElementById("fileField").value = "";
+                    document.getElementById("subjectId").value = "";
+                    document.getElementById("access").value = "";
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
